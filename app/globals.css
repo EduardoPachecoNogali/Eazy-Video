@@ -1,0 +1,231 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Liquid Glass Color Palette */
+  --background: oklch(0.98 0.01 240);
+  --foreground: oklch(0.15 0.02 240);
+  --card: oklch(0.95 0.01 240 / 0.7);
+  --card-foreground: oklch(0.2 0.02 240);
+  --popover: oklch(0.96 0.01 240 / 0.9);
+  --popover-foreground: oklch(0.15 0.02 240);
+  --primary: oklch(0.6 0.15 260);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.92 0.02 240 / 0.6);
+  --secondary-foreground: oklch(0.25 0.02 240);
+  --muted: oklch(0.94 0.01 240 / 0.5);
+  --muted-foreground: oklch(0.5 0.02 240);
+  --accent: oklch(0.7 0.12 280 / 0.8);
+  --accent-foreground: oklch(0.98 0.01 240);
+  --destructive: oklch(0.6 0.2 20);
+  --destructive-foreground: oklch(0.98 0.01 240);
+  --border: oklch(0.9 0.01 240 / 0.3);
+  --input: oklch(0.94 0.01 240 / 0.6);
+  --ring: oklch(0.6 0.15 260 / 0.5);
+  --chart-1: oklch(0.65 0.15 260);
+  --chart-2: oklch(0.7 0.12 280);
+  --chart-3: oklch(0.6 0.18 300);
+  --chart-4: oklch(0.75 0.1 200);
+  --chart-5: oklch(0.8 0.08 180);
+  --radius: 1rem;
+  --sidebar: oklch(0.96 0.01 240 / 0.8);
+  --sidebar-foreground: oklch(0.2 0.02 240);
+  --sidebar-primary: oklch(0.6 0.15 260);
+  --sidebar-primary-foreground: oklch(0.98 0.01 240);
+  --sidebar-accent: oklch(0.92 0.02 240 / 0.6);
+  --sidebar-accent-foreground: oklch(0.25 0.02 240);
+  --sidebar-border: oklch(0.9 0.01 240 / 0.3);
+  --sidebar-ring: oklch(0.6 0.15 260 / 0.5);
+}
+
+.dark {
+  --background: oklch(0.08 0.02 240);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.12 0.02 240 / 0.7);
+  --card-foreground: oklch(0.9 0.01 240);
+  --popover: oklch(0.1 0.02 240 / 0.9);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: oklch(0.7 0.15 260);
+  --primary-foreground: oklch(0.08 0.02 240);
+  --secondary: oklch(0.15 0.02 240 / 0.6);
+  --secondary-foreground: oklch(0.85 0.01 240);
+  --muted: oklch(0.13 0.02 240 / 0.5);
+  --muted-foreground: oklch(0.6 0.02 240);
+  --accent: oklch(0.6 0.12 280 / 0.8);
+  --accent-foreground: oklch(0.95 0.01 240);
+  --destructive: oklch(0.65 0.2 20);
+  --destructive-foreground: oklch(0.95 0.01 240);
+  --border: oklch(0.2 0.02 240 / 0.3);
+  --input: oklch(0.15 0.02 240 / 0.6);
+  --ring: oklch(0.7 0.15 260 / 0.5);
+  --chart-1: oklch(0.7 0.15 260);
+  --chart-2: oklch(0.75 0.12 280);
+  --chart-3: oklch(0.65 0.18 300);
+  --chart-4: oklch(0.8 0.1 200);
+  --chart-5: oklch(0.85 0.08 180);
+  --sidebar: oklch(0.1 0.02 240 / 0.8);
+  --sidebar-foreground: oklch(0.9 0.01 240);
+  --sidebar-primary: oklch(0.7 0.15 260);
+  --sidebar-primary-foreground: oklch(0.08 0.02 240);
+  --sidebar-accent: oklch(0.15 0.02 240 / 0.6);
+  --sidebar-accent-foreground: oklch(0.85 0.01 240);
+  --sidebar-border: oklch(0.2 0.02 240 / 0.3);
+  --sidebar-ring: oklch(0.7 0.15 260 / 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0.01 240) 0%,
+      oklch(0.96 0.02 260) 25%,
+      oklch(0.94 0.03 280) 50%,
+      oklch(0.96 0.02 300) 75%,
+      oklch(0.98 0.01 320) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* Liquid Glass Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  /* Removed transition animations */
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  /* Removed transform animation */
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  /* Removed transition animations */
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  /* Removed transform animation */
+}
+
+/* Enhanced blur effect for navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Removed all animation keyframes and classes */
+
+/* Enhanced Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Focus States */
+.focus-visible:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Removed smooth transitions */
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
